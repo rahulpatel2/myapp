@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Login</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <style type="text/css">
+  .red{
+    color:red;
+    }
+.form-area
+{
+    background-color: #FAFAFA;
+  padding: 10px 40px 60px;
+  margin: 10px 0px 60px;
+  border: 1px solid GREY;
+  }
+  </style>
+</head>
+<body>
+<div class="container">
+<div class="row" style='margin-top: 50px;'></div>
+<div class="col-md-7">
+    <div class="form-area">  
+        <form role="form" >
+        <%= tag(:input, :type => "hidden", :name => request_forgery_protection_token.to_s, :value => form_authenticity_token) %>
+        <br style="clear:both">
+                    <h3 style="margin-bottom: 25px; text-align: center;">Send Email</h3>
+            <div class="form-group">
+            <input type="text" class="form-control" id="name" name="name" placeholder="From Name" required>
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control" id="email" name="email" placeholder="From Email" required>
+          </div>
+
+            <div class="form-group">
+            <input type="text" class="form-control" id="toname" name="toname" placeholder=" To Name" required>
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control" id="toemail" name="toemail" placeholder="To Email" required>
+          </div>
+          
+          <div class="form-group">
+            <input type="text" class="form-control" id="subject" name="subject" placeholder="Subject" required>
+          </div>
+                    <div class="form-group">
+                    <textarea class="form-control" type="textarea" id="message" placeholder="Email Content" maxlength="500" rows="7"></textarea>
+                                            
+                    </div>
+            
+        <button type="button" id="submit" name="submit" class="btn btn-primary pull-right">Send Email</button>
+        </form>
+    </div>
+
+</div>
+<div class="col-md-5">
+    <div class="form-area">  
+        <form role="form" >
+       
+        <br style="clear:both">
+                    <h3 style="margin-bottom: 25px; text-align: center;">Send SMS</h3>
+            
+          <div class="form-group">
+            <input type="text" class="form-control" id="phone" name="phone" placeholder="Mobile No - +91" required>
+          </div>
+          <div class="form-group">
+          <textarea class="form-control" type="textarea" id="sms_message" placeholder="SMS Content" maxlength="140" rows="7"></textarea>
+          </div>
+            
+        <button type="button" id="send_sms" name="submit" class="btn btn-primary pull-right">Send Sms</button>
+        </form>
+    </div>
+    
+</div>
+</div>
+</body>
+<script type="text/javascript">
+$(function() {
+  $("#submit" ).click(function() {
+   $.ajax({
+            type: "POST",
+            url: 'send_email',
+            data: {
+                name: $('#name').val(),
+                email: $('#email').val(),
+                toname: $('#toname').val(),
+                toemail: $('#toemail').val(),
+                subject: $('#subject').val(),
+                message: $('#message').val()
+            },
+            success: function(data) {
+                if(data.status == 1)
+                {
+                  alert('Email Send successfully');
+                }
+                else{
+                  alert('some thing went wrong');
+                }
+            }
+                        
+        });
+   });
+  $("#send_sms" ).click(function() {
+   $.ajax({
+            type: "POST",
+            url: 'send_sms',
+            data: {
+                phone: $('#phone').val(),
+                message: $('#sms_message').val()
+            },
+            success: function(data) {
+              result = JSON.parse(data);
+              console.log(result);
+                if(result.status == 1)
+                {
+                  alert('SMS Send successfully');
+                }
+                else{
+                  alert('some thing went wrong');
+                }
+            }
+                        
+        });
+   });
+});
+</script>

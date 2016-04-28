@@ -1,6 +1,15 @@
 Rails.application.routes.draw do
+  post 'home/index'
+  get 'home/index' => 'home#root'
   #get 'welcome/index'
   post 'welcome/login'
+  get 'welcome/login' => 'home#root'
+
+  get 'welcome/index' => 'home#root'
+
+
+  post 'home/send_email'
+   post 'home/send_sms'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
