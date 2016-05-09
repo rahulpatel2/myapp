@@ -1,12 +1,13 @@
 Rails.application.routes.draw do
   post 'home/index'
-  get 'home/index' => 'home#root'
+  get 'home/index' => 'home#index'
   #get 'welcome/index'
   post 'welcome/login'
   get 'welcome/login' => 'home#root'
 
   get 'welcome/index' => 'home#root'
 
+get 'home/logout' => 'home#logout'
 
   post 'home/send_email'
    post 'home/send_sms'

@@ -1,11 +1,15 @@
 
 class HomeController < ApplicationController
   def index
-    user = User.where("email = ? AND password = ?", params[:username], params[:password])
-    redirect_to '/' if user.count == 0
+    if session[:user_id].nil?
+      user = User.where("email = ? AND password = ?", params[:username], params[:password]).pluck(:id)
+      redirect_to '/' if user.count == 0
+      session[:user_id] = user[0]
+    end
   end
 
-  def root
+  def logout
+    reset_session
     redirect_to '/'
   end
 
