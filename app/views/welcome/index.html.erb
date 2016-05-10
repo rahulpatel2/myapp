@@ -17,9 +17,13 @@
                     </div>     
 
                     <div style="padding-top:30px" class="panel-body" >
-
-                        <div style="display:none" id="login-alert" class="alert alert-danger col-sm-12"></div>
-                            
+                    <% if flash[:notice] %>
+                        <div style=" padding: 10px;" id="login-alert" class="alert alert-danger col-sm-12">
+                        <% flash.each do |name, msg| -%>
+                          <%= msg %>
+                        <% end -%> 
+                        </div>
+                         <% end %>
                         <form id="loginform" action='home/index' method="post"  class="form-horizontal" role="form">
 
                             <div style="display:none">
@@ -36,17 +40,6 @@
                                         <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
                                         <input id="login-password" type="password" class="form-control" name="password" placeholder="password">
                             </div>
-                                    
-
-                                
-                            <div class="input-group">
-                                      <div class="checkbox">
-                                        <label>
-                                          <input id="login-remember" type="checkbox" name="remember" value="1"> Remember me
-                                        </label>
-                                      </div>
-                                    </div>
-
 
                                 <div style="margin-top:10px" class="form-group">
                                     <!-- Button -->

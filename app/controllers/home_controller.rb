@@ -3,7 +3,10 @@ class HomeController < ApplicationController
   def index
     if session[:user_id].nil?
       user = User.where("email = ? AND password = ?", params[:username], params[:password]).pluck(:id)
-      redirect_to '/' if user.count == 0
+      if user.count == 0
+        flash[:notice] = "Invalid Email or password"
+        redirect_to '/' 
+      end
       session[:user_id] = user[0]
     end
   end
