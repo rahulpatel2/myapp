@@ -8,7 +8,19 @@ Service will send email and after sending email service will call callback servi
 
 2. bundle install
 
-3. [Install rabbitmq ](https://www.rabbitmq.com/install-standalone-mac.html)
+3. Install rabbitmq -
+
+  Installing on Mac using Homebrew :
+
+  $ brew install rabbitmq
+
+  Installing on Debian / Ubuntu -
+
+  $ sudo apt-get install rabbitmq-server
+
+  Installing on RPM-based Linux (CentOS, Fedora, OpenSuse, RedHat): 
+  https://www.rabbitmq.com/install-debian.html
+
 
 4. Start rabbitmq
 
