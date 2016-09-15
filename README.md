@@ -25,9 +25,9 @@ rackup -p 4567
 
 ## Service
 
-###1. Send Notification -
+### 1. Send Notification -
     
-    ####Sample Request =>
+    #### Sample Request =>
     ```ruby
 
       body = {}
@@ -56,7 +56,7 @@ rackup -p 4567
 
     ```
    
-    ####Sample Response in Positive cases =>
+    #### Sample Response in Positive cases =>
 
     ```json
     {
@@ -66,7 +66,7 @@ rackup -p 4567
     ```
 
 
-    ####Sample Response in Negative cases -
+    #### Sample Response in Negative cases -
 
     (1) In case of body is null or  missing 
     ```json
