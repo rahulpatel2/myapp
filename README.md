@@ -45,8 +45,46 @@ Service will send email and after sending email service will call callback servi
 ## Configuration
 
 1. Set `api_token` and `callback_service_url` in config/app_config.yml
+
+  Sample configuration -
+
+  ```ruby
+  api_token: '6a8a858b7a070d7fb42cf6c057a1dc6b'
+  callback_service_url: '.saral.com:3000/api/notification/update'
+  ```
+
+
 2. Set `tenant` and `smtp` options in config/mail_config.yml
+
+  Sample configuration -
+
+  ```ruby
+  mail:
+    tester02:
+      address: "smtp.gmail.com"
+      mail_port: 587
+      domain: "localhost"
+      user_name: "sender.email2016@gmail.com"
+      password: 'sender123'
+      authentication: "plain"
+      enable_starttls_auto: true
+  ```
+
 3. Set `queue` and `threads` in config/queue_config.yml
+
+ Sample configuration -
+
+  ```ruby
+  host: localhost
+  port: 15672
+  queue: "rabbitmq"
+  queues:
+    test:
+      min_threads: 5
+      max_threads: 5
+      max_queue: 100
+  ```
+
 
 ## Run App
 
