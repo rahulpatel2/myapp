@@ -25,7 +25,7 @@ rackup -p 4567
 
 ## Service
 
-### 1. Send Notification -
+1. Send Notification -
     
     Sample Request =>
     ```ruby
