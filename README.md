@@ -23,9 +23,9 @@ Service will send email and after sending email service will call callback servi
   ```
 
   Installing on RPM-based Linux (CentOS, Fedora, OpenSuse, RedHat) -
-  ```
+ 
   https://www.rabbitmq.com/install-debian.html
-  ```
+
 
 
 4. Start rabbitmq
