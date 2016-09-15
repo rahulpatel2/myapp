@@ -8,7 +8,7 @@ Service will send email and after sending email service will call callback servi
 
 2. bundle install
 
-3. Install rabbitmq
+3. [Install rabbitmq ](https://www.rabbitmq.com/install-standalone-mac.html)
 
 4. Start rabbitmq
 
@@ -16,7 +16,7 @@ Service will send email and after sending email service will call callback servi
 ## Configuration
 
 1. Set `api_token` and `callback_service_url` in config/app_config.yml
-2. Set 'tenant' and `smtp` options in config/mail_config.yml
+2. Set `tenant` and `smtp` options in config/mail_config.yml
 3. Set `queue` and `threads` in config/queue_config.yml
 
 ## Run App
