@@ -27,6 +27,8 @@ Service will send email and after sending email service will call callback servi
   Installing on Debian / Ubuntu -
 
   ```
+  $ echo 'deb http://www.rabbitmq.com/debian/ testing main' | sudo tee /etc/apt/sources.list.d/rabbitmq.list
+  $ wget -O- https://www.rabbitmq.com/rabbitmq-release-signing-key.asc | sudo apt-key add -
   $ sudo apt-get install rabbitmq-server
   ```
 
@@ -36,9 +38,17 @@ Service will send email and after sending email service will call callback servi
 
 
 4. Start rabbitmq
-  
+
+  Start rabbitmq in Mac OS X
+
   ```
-  brew services start rabbitmq
+  $ brew services start rabbitmq
+  ```
+
+  Start rabbitmq in Debian / Ubuntu
+
+  ```
+  $ sudo service rabbitmq-server start
   ```
 
 
