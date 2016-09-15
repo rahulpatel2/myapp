@@ -12,14 +12,20 @@ Service will send email and after sending email service will call callback servi
 
   Installing on Mac using Homebrew :
 
+  ```
   $ brew install rabbitmq
+  ```
 
   Installing on Debian / Ubuntu -
 
+  ```
   $ sudo apt-get install rabbitmq-server
+  ```
 
-  Installing on RPM-based Linux (CentOS, Fedora, OpenSuse, RedHat): 
+  Installing on RPM-based Linux (CentOS, Fedora, OpenSuse, RedHat) -
+  ```
   https://www.rabbitmq.com/install-debian.html
+  ```
 
 
 4. Start rabbitmq
