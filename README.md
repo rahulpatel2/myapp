@@ -6,11 +6,19 @@ Service will send email and after sending email service will call callback servi
 
 1. Clone the directory 
 
+  ```
+  $ git clone https://github.com/teamoptimus/notification_service.git
+  ```
+
 2. bundle install
+
+  ```
+  $ bundle install
+  ```
 
 3. Install rabbitmq -
 
-  Installing on Mac using Homebrew :
+  Installing on Mac OS X using Homebrew -
 
   ```
   $ brew install rabbitmq
@@ -27,8 +35,11 @@ Service will send email and after sending email service will call callback servi
   https://www.rabbitmq.com/install-debian.html
 
 
-
 4. Start rabbitmq
+  
+  ```
+  brew services start rabbitmq
+  ```
 
 
 ## Configuration
